@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm" class="form">
+  <fieldset>
+    <label for="full-name">Full Name: </label>
+    <input
+      name="name"
+      [(ngModel)]="name"
+      value="{{ name }}"
+      id="full-name"
+      type="text"
+      minlength="3"
+      required
+    />
+  </fieldset>
+  <fieldset>
+    <label for="address">Address: </label>
+    <input
+      name="address"
+      [(ngModel)]="address"
+      value="{{ address }}"
+      id="address"
+      type="text"
+      minlength="5"
+      required
+    />
+  </fieldset>
+  <fieldset>
+    <label for="card">Card Number: </label>
+    <input
+      name="card"
+      [(ngModel)]="creditCard"
+      value="{{ creditCard }}"
+      id="card"
+      type="number"
+      minlength="12"
+      maxlength="16"
+      required
+    />
+  </fieldset>
+
+  <fieldset>
+    <button type="submit">Submit</button>
+  </fieldset>
+</form>

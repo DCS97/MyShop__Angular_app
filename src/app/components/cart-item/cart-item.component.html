@@ -1,0 +1,23 @@
+<div class="cart-item">
+  <img src="{{ product.url }}" alt="{{ product.id }}" />
+  <div
+    style="display: flex; flex-direction: column; justify-content: space-evenly"
+  >
+    <div style="display: flex; flex-direction: column">
+      <strong>{{ product.name }}</strong>
+      <span>${{ product.price }}</span>
+    </div>
+    <div class="cart-options">
+      <input
+        type="number"
+        min="1"
+        max="20"
+        (change)="updateQuantity($event)"
+        value="{{ product.quantity }}"
+      />
+    </div>
+    <label (click)="removeCartItem(product.id)" class="remove-text"
+      >Remove</label
+    >
+  </div>
+</div>

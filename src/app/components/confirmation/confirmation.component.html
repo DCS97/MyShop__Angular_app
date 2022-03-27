@@ -1,0 +1,11 @@
+<div class="confirmation-container">
+  <h1 class="confirmation-item">Success!</h1>
+
+  <h2 class="confirmation-username">Thank you, {{ user.name }}!!!</h2>
+
+  <h4 class="confirmation-price">
+    Your order with a total of {{ totalAmount | currency: "EUR" }} is confirmed.
+  </h4>
+
+  <a class="back-link" [routerLink]="['/']">BACK TO SHOPPING</a>
+</div>

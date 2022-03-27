@@ -1,0 +1,16 @@
+<section class="container" *ngIf="!!cart.length; else elseBlock">
+  <h3 class="cart-panel">Total: ${{ totalAmount.toFixed(2) }}</h3>
+  <h3 class="cart-panel">Products: {{ totalProducts }}</h3>
+
+  <div class="cart-container">
+    <app-cart-item
+      class="cart-panel"
+      *ngFor="let product of cart"
+      [product]="product"
+    ></app-cart-item>
+  </div>
+  <a class="back-link" [routerLink]="['/checkout']">PROCEED TO CHECKOUT</a>
+</section>
+<ng-template #elseBlock>
+  <h3 class="empty-cart-message">Your cart is empty</h3>
+</ng-template>

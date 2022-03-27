@@ -1,0 +1,12 @@
+<div class="product-container">
+  <a [routerLink]="['/product-detail/', product.id]">
+    <img class="product-image" src="{{ product.url }}" alt="{{ product.id }}" />
+  </a>
+  <p class="price">{{ product.price | currency: "EUR" }}</p>
+  <select class="select-input" name="quantity" (change)="setQuantity($event)">
+    <option *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" value="{{ i }}">
+      {{ i }}
+    </option>
+  </select>
+  <button (click)="addToCart()">add to cart</button>
+</div>
