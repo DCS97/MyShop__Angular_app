@@ -11,7 +11,6 @@ export class CartService {
   constructor(private http: HttpClient) {}
 
   add(quantity: number, newProduct: Product) {
-    console.log('quantity', quantity);
     let product: Product | undefined = this.cartProducts.find(
       (item) => item.id === newProduct.id
     );
@@ -34,6 +33,7 @@ export class CartService {
     this.cartProducts = this.cartProducts.filter(
       (product) => product.id !== productId
     );
+    window.alert('Product successfully removed');
   }
 
   getTotalAmount(): number {
